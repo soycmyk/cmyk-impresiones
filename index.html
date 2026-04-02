@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CMYK Impresiones | Portafolio de Servicios</title>
+  <meta name="description" content="Portafolio informativo de CMYK Impresiones: impresiones, fotografías, plastificación, material publicitario, trabajos escolares y soporte técnico." />
+  <meta property="og:title" content="CMYK Impresiones | Portafolio de Servicios" />
+  <meta property="og:description" content="Impresiones, fotos, plastificación, anuncios publicitarios, trabajos escolares y soporte técnico." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
+  <meta name="theme-color" content="#0f1115" />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --bg-soft: #141820;
+      --card: rgba(255,255,255,0.05);
+      --stroke: rgba(212, 170, 76, 0.22);
+      --text: #f5f1e8;
+      --muted: #d4c8ac;
+      --gold: #d6a550;
+      --gold-2: #f0d382;
+      --shadow: 0 18px 45px rgba(0,0,0,0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(214,165,80,0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(214,165,80,0.08), transparent 24%),
+        linear-gradient(180deg, #090b0e 0%, #0f1115 48%, #0b0d10 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(100% - 28px, var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 26px 0 18px;
+    }
+
+    .hero-shell {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--stroke);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: auto -60px -60px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(214,165,80,0.18), rgba(214,165,80,0.02) 70%, transparent 72%);
+      pointer-events: none;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(214,165,80,0.25);
+      background: rgba(214,165,80,0.08);
+      color: var(--gold-2);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      padding: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.87rem;
+      color: var(--gold-2);
+      background: rgba(214,165,80,0.08);
+      border: 1px solid rgba(214,165,80,0.18);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      min-height: 50px;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+      color: #181511;
+      box-shadow: 0 10px 24px rgba(214,165,80,0.25);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(214,165,80,0.16);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      min-height: 100%;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.12rem;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mini-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .mini-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .mini-list li:first-child { padding-top: 0; }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      flex: 0 0 auto;
+      box-shadow: 0 0 0 6px rgba(214,165,80,0.10);
+    }
+
+    section {
+      padding: 20px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 60ch;
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: rgba(214,165,80,0.08);
+      border: 1px solid rgba(214,165,80,0.16);
+      color: var(--gold-2);
+      font-size: 1.4rem;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.22rem;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 0.87rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: #efe2be;
+    }
+
+    .info-panel {
+      margin-top: 8px;
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(214,165,80,0.08), rgba(214,165,80,0.03));
+      border: 1px solid rgba(214,165,80,0.16);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contact {
+      padding-bottom: 34px;
+    }
+
+    .contact-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--stroke);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.02em;
+    }
+
+    .contact-box p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 58ch;
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      min-width: 0;
+    }
+
+    .contact-pill strong,
+    .contact-pill span {
+      display: block;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-pill strong {
+      font-size: 0.92rem;
+      color: var(--gold-2);
+    }
+
+    .contact-pill span {
+      margin-top: 4px;
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 0 0 34px;
+      color: #b9ae96;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .float-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #181511;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.32);
+    }
+
+    @media (max-width: 920px) {
+      .hero-content,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-content {
+        padding: 22px 18px 20px;
+      }
+
+      .contact-box,
+      .hero-shell {
+        border-radius: 24px;
+      }
+
+      .contact-box {
+        padding: 22px 18px;
+      }
+
+      .float-wa span { display: none; }
+      .float-wa { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero wrap">
+    <div class="hero-shell">
+      <div class="topbar">
+        <div class="brand">
+          <img src="logo.png" alt="Logo de CMYK Impresiones" />
+          <div class="brand-text">
+            <strong>CMYK IMPRESIONES</strong>
+            <span>Portafolio informativo de servicios</span>
+          </div>
+        </div>
+        <div class="badge">Atención por WhatsApp y correo</div>
+      </div>
+
+      <div class="hero-content">
+        <div>
+          <div class="eyebrow">Impresión, diseño y soporte técnico</div>
+          <h1>Soluciones prácticas para estudio, negocio y oficina.</h1>
+          <p class="lead">
+            CMYK Impresiones reúne servicios de impresión, fotografía, plastificación, material publicitario,
+            trabajos escolares y soporte técnico para computadoras e impresoras. Este espacio es solo informativo,
+            ideal para compartir en redes sociales y dirigir a sus clientes al canal de contacto directo.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/50768138959" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:soycmykimpresiones@gmail.com">Correo</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Servicios destacados">
+          <h2>Lo que encontrarán aquí</h2>
+          <ul class="mini-list">
+            <li><span class="dot"></span><span>Servicios organizados por categorías para que el cliente identifique rápido lo que necesita.</span></li>
+            <li><span class="dot"></span><span>Diseño ligero y responsivo, pensado para verse bien en celular, ideal para compartir como enlace en redes sociales.</span></li>
+            <li><span class="dot"></span><span>Contacto directo sin tienda en línea: atención por WhatsApp y correo electrónico.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="servicios">
+      <div class="section-head">
+        <div>
+          <h2>Categorías de servicios</h2>
+          <p>
+            Se presenta una estructura clara y breve, similar a una mini landing page o perfil tipo Beacons,
+            enfocada en explicar qué ofrece la marca y cómo contactarla.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon">🖨️</div>
+          <h3>Impresiones</h3>
+          <p>
+            Impresiones en color y en blanco y negro para documentos, tareas, materiales informativos y trabajos de uso cotidiano.
+          </p>
+          <div class="tags">
+            <span class="tag">Color</span>
+            <span class="tag">Blanco y negro</span>
+            <span class="tag">Documentos</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon">📷</div>
+          <h3>Impresión de fotos</h3>
+          <p>
+            Fotografías tamaño carnet y otros formatos hasta 8.5 x 11 pulgadas, con enfoque en presentaciones personales, escolares y administrativas.
+          </p>
+          <div class="tags">
+            <span class="tag">Carnet</span>
+            <span class="tag">Hasta 8.5 x 11</span>
+            <span class="tag">Fotos</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon">📄</div>
+          <h3>Plastificación</h3>
+          <p>
+            Plastificación de documentos y materiales impresos hasta tamaño legal 8.5 x 14, útil para proteger avisos, menús y piezas de uso frecuente.
+          </p>
+          <div class="tags">
+            <span class="tag">Hasta 8.5 x 14</span>
+            <span class="tag">Legal</span>
+            <span class="tag">Protección</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎨</div>
+          <h3>Anuncios publicitarios</h3>
+          <p>
+            Diseño y producción de menús, tarjetas de gratificación, tarjetas de presentación y códigos QR de presentación para negocios, eventos y marcas personales.
+          </p>
+          <div class="tags">
+            <span class="tag">Menús</span>
+            <span class="tag">Tarjetas</span>
+            <span class="tag">Código QR</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon">📚</div>
+          <h3>Trabajos escolares</h3>
+          <p>
+            Apoyo en la preparación de trípticos, dípticos, presentaciones y trabajos escritos escolares con formato claro y presentación ordenada.
+          </p>
+          <div class="tags">
+            <span class="tag">Trípticos</span>
+            <span class="tag">Dípticos</span>
+            <span class="tag">Presentaciones</span>
+            <span class="tag">Trabajos escritos</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon">💻</div>
+          <h3>Servicio técnico</h3>
+          <p>
+            Soporte técnico para computadoras e impresoras, con atención en casa y también de forma remota para diagnósticos, configuración y solución de problemas.
+          </p>
+          <div class="tags">
+            <span class="tag">Computadoras</span>
+            <span class="tag">Impresoras</span>
+            <span class="tag">En casa</span>
+            <span class="tag">Remoto</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="info-panel">
+        <strong>Nota:</strong> este portafolio se mantiene con enfoque informativo, sin catálogo de pagos ni carrito de compra.
+        El objetivo es que el cliente conozca rápidamente los servicios y haga contacto directo por WhatsApp o correo para consultar disponibilidad,
+        detalles y cotización.
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="contact-box">
+        <div>
+          <h2>Contacto directo</h2>
+          <p>
+            Para consultas, pedidos o atención personalizada, los clientes pueden escribir directamente por WhatsApp o enviar un correo.
+            El sitio está preparado para publicarse en GitHub Pages como una página estática rápida y fácil de compartir.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-pill" href="https://wa.me/50768138959" target="_blank" rel="noopener noreferrer">
+            <div>
+              <strong>WhatsApp</strong>
+              <span>+507 6813-8959</span>
+            </div>
+            <span>↗</span>
+          </a>
+
+          <a class="contact-pill" href="mailto:soycmykimpresiones@gmail.com">
+            <div>
+              <strong>Correo</strong>
+              <span>soycmykimpresiones@gmail.com</span>
+            </div>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    CMYK Impresiones · Portafolio informativo para redes sociales y GitHub Pages.
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/50768138959" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp de CMYK Impresiones">
+    <span>WhatsApp</span>
+    <strong>✦</strong>
+  </a>
+</body>
+</html>
